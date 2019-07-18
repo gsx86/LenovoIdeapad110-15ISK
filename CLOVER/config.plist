@@ -43,14 +43,18 @@
 				<key>PStates</key>
 				<false/>
 				<key>PluginType</key>
-				<false/>
+				<true/>
 			</dict>
+			<key>PluginType</key>
+			<string>1</string>
+			<key>UseSystemIO</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v dart=0</string>
+		<string>-v dart=0 -xcpm</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
@@ -64,14 +68,20 @@
 		<key>Timeout</key>
 		<integer>3</integer>
 		<key>XMPDetection</key>
-		<false/>
+		<string>Yes</string>
 	</dict>
 	<key>CPU</key>
 	<dict>
+		<key>C6</key>
+		<false/>
 		<key>HWPEnable</key>
 		<true/>
-		<key>UseARTFrequency</key>
+		<key>HWPValue</key>
+		<string>0x20001C01</string>
+		<key>QEMU</key>
 		<false/>
+		<key>UseARTFrequency</key>
+		<true/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -154,7 +164,7 @@
 			<integer>8</integer>
 		</dict>
 		<key>PlayAsync</key>
-		<true/>
+		<false/>
 		<key>Scan</key>
 		<true/>
 		<key>ScreenResolution</key>
@@ -186,14 +196,35 @@
 		<true/>
 		<key>Debug</key>
 		<false/>
+		<key>FakeCPUID</key>
+		<string>0x0406E3</string>
 		<key>KernelCpu</key>
 		<false/>
 		<key>KernelLapic</key>
 		<false/>
 		<key>KernelPm</key>
 		<true/>
+		<key>KernelToPatch</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>MSR 0xE2 _xcpm_idle instant reboot (c) Pike R. Alpha</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				ILniAAAADzA=
+				</data>
+				<key>MatchOS</key>
+				<string>10.11.x,10.12.x,10.13.x,10.14.x,10.15.x</string>
+				<key>Replace</key>
+				<data>
+				ILniAAAAkJA=
+				</data>
+			</dict>
+		</array>
 		<key>KernelXCPM</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
@@ -211,17 +242,17 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>06/26/2018</string>
+		<string>05/25/2019</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP131.88Z.0223.B00.1806260754</string>
+		<string>MBP132.88Z.F000.B00.1905251314</string>
 		<key>Board-ID</key>
-		<string>Mac-473D31EABEB93F9B</string>
+		<string>Mac-66E35819EE2D0D05</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02RL0MHGVC1ABCDE</string>
+		<string>C02643701J9H9W8JC</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -232,6 +263,8 @@
 		<string>Apple Inc.</string>
 		<key>ChassisType</key>
 		<string>0x09</string>
+		<key>EfiVersion</key>
+		<string>257.0.0.0.0</string>
 		<key>Family</key>
 		<string>MacBook Pro</string>
 		<key>FirmwareFeatures</key>
@@ -265,11 +298,11 @@
 		<key>PlatformFeature</key>
 		<string>0x1A</string>
 		<key>ProductName</key>
-		<string>MacBookPro13,1</string>
+		<string>MacBookPro13,2</string>
 		<key>SerialNumber</key>
-		<string>C02RL0MHGVC1</string>
+		<string>C02SLJYFGYFH</string>
 		<key>SmUUID</key>
-		<string>0FE9B964-9FF4-4902-A9E8-286c0795d15d</string>
+		<string>4249AE2F-9DD8-4491-9121-744AB19E96C1</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
